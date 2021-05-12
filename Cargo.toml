@@ -1,0 +1,30 @@
+[package]
+name = "link-rust-webservice-example"
+version = "0.0.1"
+authors = ["Mario Link"]
+edition = "2018"
+description = "Rust Webservice Example"
+#homepage = "https://github.com/?/?"
+#repository = "https://github.com/?/?"
+keywords = ["rust","webservice","example","link"]
+license = "MIT"
+exclude = ["etc/**/*", "examples/**/*", "tests/**/*", "Cargo.lock", "target/**/*"]
+
+[package.metadata.docs.rs]
+all-features = true
+
+#[lib]
+
+[features]
+default = []
+trace = []
+replay = []
+
+[dependencies]
+actix-web = "^3"
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
+
+# RUSTFLAGS=--cfg=web_sys_unstable_apis cargo run
